@@ -8,24 +8,25 @@ For detailed information about crosswalk, please visit the homepage of original 
 
 ### IMPORTANT NOTICES
 
-- Crosswalk does not work for Android 10+ devices. I recommend you split the app in 2 different projects, one with crosswalk and one without. The one without crosswalk must support minimum android 7 (sdk level 26).
+- Crosswalk does not work for Android 10+ devices, this plugin will fallback on to the native webview for Android 10 devices.
 
 Config.xml must have:
 
     <platform name="android">
         <preference name="android-minSdkVersion" value="26" />
+        <preference name="android-targetSdkVersion" value="29" />
     </platform>
 
 platforms/android/gradle.properties must have:
 
-    cdvMinSdkVersion=26
+    cdvMinSdkVersion=29
 
 ### Install
 
 - Add this plugin
 
 ```
-$ cordova plugin add cordova-plugin-crosswalk-webview-v3
+$ cordova plugin add https://github.com/GeorgeD19/cordova-plugin-crosswalk-webview-v3.1
 ```
 
 - Build
